@@ -1,18 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from './components/Navbar';
 import Home from './pages/Home';
-// import SafulPay from './pages/SafulPay';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import SafulPayPage from './pages/SafulPay';
-
+import FeaturePage from './pages/Feature';
+import AboutUs from './pages/About-Us';
+import TermsAndConditions from './pages/TermsAndConditions';
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
+    
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/safulpay" element={<SafulPayPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/features" element={<FeaturePage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
       </Routes>
     </Router>
   );

@@ -14,3 +14,41 @@
   .animate-sliding-banner {
     animation: slideBanner 15s linear infinite;
   }
+
+
+
+:root {
+  --safulpay-green: #126100;
+  --safulpay-security: #ff7b7b;
+  --safulpay-privacy: #ffd700;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

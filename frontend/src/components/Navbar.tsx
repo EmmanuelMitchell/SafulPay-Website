@@ -1,51 +1,171 @@
-import { Link } from 'react-router-dom';
-
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
 
 const Navbar = () => {
-  return (
-    <nav className="flex items-center justify-between py-4 px-6 bg-white">
-      <div className="flex items-center">
-        <Link to="/" className="flex items-center">
-          {/* <img src={logo} alt="SafulPay Logo" className="h-8" /> */}
-          <img src="icon.png" alt="SafulPay Logo" className="h-8" />
-          <span className="ml-2 text-xl font-semibold text-green-700">SafulPay</span>
-        </Link>
-      </div>
-      
-      <div className="hidden md:flex items-center space-x-8">
-        <Link to="/" className="text-gray-800 hover:text-green-600 transition duration-300">
-          Close App
-        </Link>
-        <Link to="/features" className="text-gray-800 hover:text-green-600 transition duration-300">
-          Features
-        </Link>
-        <Link to="/how-it-works" className="text-gray-800 hover:text-green-600 transition duration-300">
-          How It Works
-        </Link>
-        <Link to="/testimony" className="text-gray-800 hover:text-green-600 transition duration-300">
-          Testimony
-        </Link>
-        <Link to="/faqs" className="text-gray-800 hover:text-green-600 transition duration-300">
-          FAQs
-        </Link>
-        <Link to="/contact-us" className="text-gray-800 hover:text-green-600 transition duration-300">
-          Contact Us
-        </Link>
-        <Link to="/about-us" className="text-gray-800 hover:text-green-600 transition duration-300">
-          About Us
-        </Link>
-      </div>
-      
-      <div>
-        <Link 
-          to="/download" 
-          className="bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded-md transition duration-300"
-        >
-          Download App
-        </Link>
-      </div>
-    </nav>
-  );
-};
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
 
-export default Navbar;
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMenuOpen])
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location])
+
+  const navLinks = [
+    { path: "/", label: "Close App" },
+    { path: "/features", label: "Features" },
+    { path: "/how-it-works", label: "How It Works" },
+    { path: "/testimony", label: "Testimony" },
+    { path: "/faqs", label: "FAQs" },
+    { path: "/contact-us", label: "Contact Us" },
+    { path: "/about-us", label: "About Us" },
+  ]
+
+  return (
+    <>
+      {/* Desktop Navbar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <img src="/icon.png" alt="SafulPay Logo" className="h-8 w-auto" />
+              <span className="ml-2 text-xl font-semibold text-[#126100]">SafulPay</span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-[15px] transition-colors duration-200 ${
+                    location.pathname === link.path
+                      ? "text-[#126100] font-medium"
+                      : "text-gray-600 hover:text-[#126100]"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Download Button & Mobile Menu Trigger */}
+            <div className="flex items-center">
+              <Link
+                to="/download"
+                className="hidden md:block bg-[#126100] hover:bg-[#0d4800] text-white text-[15px] font-medium px-6 py-2.5 rounded-md transition-colors duration-200"
+              >
+                Download App
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="md:hidden p-2 rounded-md text-gray-600 hover:text-[#126100] hover:bg-gray-50 focus:outline-none"
+                aria-expanded={isMenuOpen}
+                aria-label="Toggle menu"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {isMenuOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 z-40 transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } md:hidden`}
+      >
+        {/* Overlay */}
+        <div
+          className={`absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Menu Content */}
+        <div className="relative w-[280px] h-full bg-[#126100] flex flex-col">
+          {/* Logo */}
+          <div className="p-6">
+            <Link to="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+              <img src="/icon-white.png" alt="SafulPay Logo" className="h-8 w-auto" />
+              <span className="ml-2 text-xl font-semibold text-white">SafulPay</span>
+            </Link>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex-1 px-6 py-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`block py-3 text-[17px] ${
+                  location.pathname === link.path ? "text-white font-medium" : "text-green-100 hover:text-white"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Download Button & Footer Links */}
+          <div className="p-6 space-y-6">
+            <Link
+              to="/download"
+              className="block w-full bg-white hover:bg-gray-100 text-[#126100] text-center text-[15px] font-medium px-6 py-3 rounded-md transition-colors duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Download App
+            </Link>
+
+            <div className="flex justify-between text-[13px] text-green-100">
+              <Link
+                to="/privacy"
+                className="hover:text-white transition-colors duration-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                className="hover:text-white transition-colors duration-200"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Navbar
+
