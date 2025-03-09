@@ -34,7 +34,7 @@ const Footer = ({ className = "" }: FooterProps) => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-6">
-              <img src="/logo-white.svg" alt="SafulPay" className="h-8 mr-2" />
+              <img src="/icon.png" alt="SafulPay" className="h-8 mr-2" />
               <span className="text-[#126100] text-xl font-bold">SafulPay</span>
             </div>
             <h3 className="text-lg font-semibold mb-4">
@@ -51,7 +51,7 @@ const Footer = ({ className = "" }: FooterProps) => {
                 href="#google-play"
                 className="bg-white rounded-md py-2 px-4 flex items-center hover:bg-gray-100 transition-colors"
               >
-                <img src="/google-play.svg" alt="Google Play" className="h-5 mr-2" />
+                <img src="/google.jpg" alt="Google Play" className="h-5 mr-2" />
                 <span className="text-black text-sm">Google Play</span>
               </a>
               <a
