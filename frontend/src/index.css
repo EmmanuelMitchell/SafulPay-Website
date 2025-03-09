@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+@keyframes progressBar {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes slideBanner {
+    0% { transform: translateX(0) rotate(6deg); }
+    100% { transform: translateX(-50%) rotate(6deg); }
+  }
+  
+  .animate-sliding-banner {
+    animation: slideBanner 15s linear infinite;
+  }
