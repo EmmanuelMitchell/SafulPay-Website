@@ -84,10 +84,10 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Navbar from "../components/Navbar"
-import HowItWorks from "../components/HowItWorks"
-import Testimony from "../components/Testimony"
-import FAQs from "../components/FAQs"
-import ContactUs from "../components/ContactUs"
+// import HowItWorks from "../components/HowItWorks"
+// import Testimony from "../components/Testimony"
+// import FAQs from "../components/FAQs"
+// import ContactUs from "../components/ContactUs"
 
 export default function Features() {
 
@@ -201,10 +201,10 @@ export default function Features() {
         </div>
 
         {/* Conditionally render sections based on activeSection */}
-        {activeSection === "how-it-works" && <HowItWorks />}
+        {/* {activeSection === "how-it-works" && <HowItWorks />}
         {activeSection === "testimony" && <Testimony />}
         {activeSection === "faqs" && <FAQs />}
-        {activeSection === "contact-us" && <ContactUs />}
+        {activeSection === "contact-us" && <ContactUs />} */}
       </motion.div>
     </>
   )

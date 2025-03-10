@@ -246,6 +246,14 @@ const Navbar = ({ scrollToSection, toggleSection, isHomePage = false }: NavbarPr
                 >
                   Contact Us
                 </button>
+
+                
+                <Link
+                  to="/about-us" className="text-gray-600 hover:text-[#126100] text-[15px]"
+                  
+                >
+                  About Us
+                </Link>
               </div>
 
               {/* Download Button & Mobile Menu Trigger */}
