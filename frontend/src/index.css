@@ -17,17 +17,17 @@
 
 
 
-:root {
+/* :root {
   --safulpay-green: #126100;
   --safulpay-security: #ff7b7b;
   --safulpay-privacy: #ffd700;
-}
+} */
 
-body {
+/* body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 /* Custom animations */
 @keyframes fadeUp {
@@ -45,10 +45,49 @@ body {
   animation: fadeUp 0.6s ease-out forwards;
 }
 
+
+
 /* Custom utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes sliding-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-sliding-banner {
+  animation: sliding-banner 20s linear infinite;
 }
 
