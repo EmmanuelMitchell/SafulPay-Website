@@ -58,7 +58,7 @@ const Footer = ({ className = "" }: FooterProps) => {
                 href="#app-store"
                 className="bg-white rounded-md py-2 px-4 flex items-center hover:bg-gray-100 transition-colors"
               >
-                <img src="/app-store.svg" alt="App Store" className="h-5 mr-2" />
+                <img src="apple.jpg" alt="App Store" className="h-5 mr-2" />
                 <span className="text-black text-sm">App Store</span>
               </a>
             </div>

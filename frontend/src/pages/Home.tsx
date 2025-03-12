@@ -7,6 +7,8 @@ import HowItWorks from "../components/HowItWorks"
 import Testimony from "../components/Testimony"
 import FAQs from "../components/FAQs"
 import ContactUs from "../components/ContactUs"
+import Features from "../components/Features"
+import Footer from "../components/Footer"
 
 export default function Home() {
   const navigate = useNavigate()
@@ -46,7 +48,7 @@ export default function Home() {
   return (
     <>
       {/* Mobile Navbar - Only visible on mobile */}
-      <div className="md:hidden">
+      <div className="md:hidden ">
         <Navbar scrollToSection={scrollToSection} isHomePage={true} />
       </div>
 
@@ -105,6 +107,19 @@ export default function Home() {
               finances with ease.
             </p>
           </section>
+          <div className="mt-8 text-center">
+          <div className="flex justify-center space-x-4">
+            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+              <img src="google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
+              <span className="text-black">Google Play</span>
+            </button>
+
+            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+              <img src="apple.jpg" alt="App Store" className="w-6 h-6 mr-2" />
+              <span className="text-black">App Store</span>
+            </button>
+          </div>
+        </div>
 
           {/* Main Content with Banner and Phone */}
           <div className="relative flex-grow flex flex-col items-center justify-center">
@@ -155,11 +170,13 @@ export default function Home() {
       </div>
 
       {/* Scrollable Sections - Only visible on mobile */}
-      <div className="md:hidden">
+      <div className="">
+        <Features />
         <HowItWorks />
         <Testimony />
         <FAQs />
         <ContactUs />
+        <Footer/>
       </div>
     </>
   )
