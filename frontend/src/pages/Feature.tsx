@@ -1,212 +1,206 @@
-
-// import { motion } from "framer-motion";
-// import Navbar from "../components/Navbar";
-
-// const scrollToSection = (id: string) => {
-//   const element = document.getElementById(id)
-//   if (element) {
-//     element.scrollIntoView({ behavior: "smooth" })
-//   }
-// }
-// export default function FeaturePage() {
-//   return (
-//   <>
-//   <Navbar scrollToSection={scrollToSection} />
-//     <motion.div
-//       initial={{ y: "100vh", opacity: 0 }}
-//       animate={{ y: 0, opacity: 1 }}
-//       transition={{ duration: 0.8, ease: "easeOut" }}
-//       className="min-h-screen bg-white"
-//     >
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-//         <div className="bg-white rounded-3xl shadow-sm p-8 relative overflow-hidden">
-//           {/* Features Section */}
-//           <div className="text-center mb-16">
-//             <h1 className="text-5xl font-bold text-gray-900 mb-12">Features You Will Get</h1>
-//             <div className="flex justify-center space-x-4 mb-8">
-//               <span className="text-green-700 text-xl font-medium">User-friendly</span>
-//               <span className="text-gray-400">-</span>
-//               <span className="text-red-400 text-xl font-medium">Security</span>
-//               <span className="text-gray-400">-</span>
-//               <span className="text-yellow-500 text-xl font-medium">Privacy</span>
-//             </div>
-//             <div className="max-w-3xl mx-auto">
-//               <p className="text-gray-700 text-lg leading-relaxed text-center">
-//                 SafulPay provides a fast and secure way to manage your money, ensuring your transactions
-//                 are always smooth. You can easily handle multiple wallets, pay bills, and top up services with
-//                 just a few taps. Our transparent fees keep you informed, so there are no surprises. Whether
-//                 you're sending money locally or across borders, SafulPay makes it simple and reliable. Plus,
-//                 our 24/7 support is always available to assist whenever you need help.
-//               </p>
-//             </div>
-//           </div>
-//           {/* Wallet Demo Section */}
-//           <div className="flex justify-center items-center mt-16">
-//             <div className="flex gap-8 items-center">
-//               {/* Left side - User icon with connection */}
-//               <div className="relative">
-//                 <div className="bg-green-600 w-16 h-16 rounded-md flex items-center justify-center">
-//                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-//                   </svg>
-//                 </div>
-//               </div>
-//               {/* Middle - Wallet UI */}
-//               <div className="bg-green-600 rounded-lg p-6 text-white shadow-lg w-64">
-//                 <h3 className="text-xl mb-6">Primary Wallet</h3>
-//                 <div className="mb-2 text-sm">Wallet Balance</div>
-//                 <div className="text-2xl font-bold flex items-center">
-//                   SLE 23,000.87
-//                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-//                     <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-//                     <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-//                   </svg>
-//                 </div>
-//               </div>
-//               {/* Right side - Card UI */}
-//               <div className="bg-gray-100 rounded-2xl p-10 relative">
-//                 <div className="bg-white rounded-lg shadow-md p-4 w-40 h-16 flex items-center justify-center">
-//                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-//                   </svg>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </motion.div>
-//       </>
-//   );
-// }
-
-
 import { useState } from "react"
-import { motion } from "framer-motion"
 import Navbar from "../components/Navbar"
-// import HowItWorks from "../components/HowItWorks"
-// import Testimony from "../components/Testimony"
-// import FAQs from "../components/FAQs"
-// import ContactUs from "../components/ContactUs"
+import HowItWorks from "../components/HowItWorks"
+import Testimony from "../components/Testimony"
+import FAQs from "../components/FAQs"
+import ContactUs from "../components/ContactUs"
+import Footer from "../components/Footer"
 
-export default function Features() {
 
-  const [activeSection, setActiveSection] = useState<string | null>(null)
+
+  
+export default function Features  ()  {
+    const [activeSection, setActiveSection] = useState<string | null>(null)
 
   const toggleSection = (section: string) => {
     if (activeSection === section) {
-      setActiveSection(null) // Hide if already showing
+      setActiveSection(null) 
     } else {
-      setActiveSection(section) // Show the clicked section
+      setActiveSection(section) 
     }
   }
-
   return (
     <>
-      {/* Navbar - Visible on all screen sizes */}
-      <Navbar toggleSection={toggleSection} />
-      
-      <motion.div
-        className="min-h-screen bg-white pt-16" // Added pt-16 to account for navbar
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
-        exit={{ y: "100%" }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-          duration: 0.5,
-        }}
-      >
-        {/* Main Content */}
-        <div className="relative">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-[0.03]">
-            <div className="grid grid-cols-10 gap-4">
-              {Array.from({ length: 200 }).map((_, i) => (
-                <div key={i} className="w-6 h-6">
-                  <div className="w-6 h-6 bg-gray-200 rounded-full"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <main className="relative z-10 px-6 py-16">
-            <div className="max-w-6xl mx-auto">
-              <h1 className="text-[52px] font-bold text-center mb-8 leading-tight font-[Outfit]">Features You Will Get</h1>
-
-              <div className="flex justify-center items-center gap-3 mb-12 text-xl font-[Outfit]">
-                <span className="text-[#126100] font-medium">User-friendly</span>
-                <span className="text-gray-400">-</span>
-                <span className="text-[#FF7B7B] font-medium">Security</span>
-                <span className="text-gray-400">-</span>
-                <span className="text-[#FFD700] font-medium">Privacy</span>
+      <Navbar toggleSection={toggleSection}  />
+    <div className="font-['Outfit']">
+      {/* Features You Will Get Section */}
+      <section className="bg-white py-20 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-3">Features You Will Get</h2>
+        <div className="flex justify-center items-center gap-3 mb-8 text-[15px] font-[Outfit">
+                <span className="text-[#126100]">User-friendly</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-[#FF7B7B]">Security</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-[#FFD700]">Privacy</span>
               </div>
+        <p className="text-gray-600 mb-14 max-w-xl mx-auto">
+          Stay updated, connected, and secure with our powerful features designed to enhance your experience.
+        </p>
 
-              <p className="text-gray-600 text-center max-w-4xl mx-auto mb-16 leading-relaxed text-lg font-[Outfit]">
-                SafulPay provides a fast and secure way to manage your money, ensuring your transactions are always
-                smooth. You can easily handle multiple wallets, pay bills, and top up services with just a few taps. Our
-                transparent fees keep you informed, so there are no surprises. Whether you're sending money locally or
-                across borders, SafulPay makes it simple and reliable. Plus, our 24/7 support is always available to
-                assist whenever you need help.
-              </p>
+        <div className="flex justify-center items-center gap-8 max-w-4xl mx-auto">
+          <img src="animation.png" alt="" />
+        </div>
+      </section>
 
-              {/* Feature Illustration */}
-              <div className="flex justify-center items-center gap-12">
-                <div className="relative">
-                  {/* User Icon */}
-                  <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
-                    <div className="w-16 h-16 bg-[#126100] rounded-lg flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="w-[2px] h-8 bg-[#126100] mx-auto mt-2"></div>
-                  </div>
-
-                  {/* Wallet Card */}
-                  <div className="w-[400px] h-[200px] bg-[#126100] rounded-lg p-6 relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10">
-                      <div className="w-full h-full bg-cover"></div>
-                    </div>
-                    <div className="relative z-10">
-                      <h3 className="text-white text-xl mb-12 font-[Outfit]">Primary Wallet</h3>
-                      <div className="mt-auto">
-                        <p className="text-white/80 text-sm mb-1 font-[Outfit]">Wallet Balance</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-white text-2xl font-semibold font-[Outfit]">SLE 23,000.87</span>
-                          <button className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
+      {/* Explore Even More Powerful Features Section */}
+      <section className="bg-[#126100]  py-1 px-6 text-white relative overflow-hidden ">
+        <div className="p-12 relative z-10">
+          <h2 className="text-3xl font-bold mb-5 text-center">Explore Even More Powerful Features</h2>
+          <p className="text-center text-white/80 max-w-2xl mx-auto">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, suscipit!
+          </p>
         </div>
 
-        {/* Conditionally render sections based on activeSection */}
-        {/* {activeSection === "how-it-works" && <HowItWorks />}
-        {activeSection === "testimony" && <Testimony />}
-        {activeSection === "faqs" && <FAQs />}
-        {activeSection === "contact-us" && <ContactUs />} */}
-      </motion.div>
-    </>
+        <div className="flex justify-center max-w-5xl mx-auto relative z-10">
+          {/* Single feature image */}
+          <img src="features.png" alt="Feature showcase" className="rounded-lg max-w-full shadow-xl" />
+        </div>
+      </section>
+
+      {/* Additional image section */}
+      <div className="-rotate-18 mt-6">
+        <img src="rope.png" alt="Rope illustration" className="w-full" />
+      </div>
+
+      {/* Your Security Is Our Priority Section */}
+      <section className="py-8 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-5 text-center">Your Security Is Our Priority</h2>
+          <p className="text-gray-600 mb-14 text-center max-w-xl mx-auto">
+            We employ the latest encryption technology and security practices to ensure your data remains protected at
+            all times.
+          </p>
+
+          <div className="flex flex-wrap justify-between items-center">
+            {/* Security features to the left of the phone */}
+            <div className="w-full md:w-1/4 space-y-10 order-2 md:order-1">
+              <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
+                <div className="bg-green-100 p-3 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-[#126100]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Data Encryption</h3>
+                  <p className="text-gray-600 text-sm">Your data is encrypted using industry-standard protocols.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
+                <div className="bg-green-100 p-3 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-[#126100]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Secure Authentication</h3>
+                  <p className="text-gray-600 text-sm">Multiple layers of authentication to protect your account.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Phone in the middle */}
+            <div className="w-full md:w-2/4 px-6 py-6 order-1 md:order-2">
+              <div className="relative transform hover:scale-105 transition-transform duration-500">
+                <img
+                  src="phone.png"
+                  alt="Smartphone"
+                  className="mx-auto rounded-3xl shadow "
+                />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#126100]/10 to-transparent opacity-50"></div>
+              </div>
+            </div>
+
+            {/* Security features to the right of the phone */}
+            <div className="w-full md:w-1/4 space-y-10 order-3">
+              <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
+                <div className="bg-green-100 p-3 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-[#126100]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Regular Audits</h3>
+                  <p className="text-gray-600 text-sm">
+                    We conduct regular security audits to identify and address potential vulnerabilities.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
+                <div className="bg-green-100 p-3 rounded-lg shadow-sm">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-[#126100]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Automatic Updates</h3>
+                  <p className="text-gray-600 text-sm">
+                    Our system is constantly updated to protect against the latest security threats.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div className="">
+       
+        <HowItWorks />
+        <Testimony />
+        <FAQs />
+        {/* ContactUs is now part of the dark footer section */}
+        <div className="bg-[#1A1A1A] mt-10 ">
+          <ContactUs />
+          <Footer />
+        </div>
+      </div>
+                      </>
   )
 }
 

@@ -21,14 +21,15 @@ const Footer = ({ className = "" }: FooterProps) => {
   ]
 
   const socialLinks = [
-    { name: "Facebook", icon: "/social/facebook.svg", url: "#facebook" },
-    { name: "Twitter", icon: "/social/twitter.svg", url: "#twitter" },
-    { name: "Instagram", icon: "/social/instagram.svg", url: "#instagram" },
-    { name: "TikTok", icon: "/social/tiktok.svg", url: "#tiktok" },
+    { name: "Facebook", icon: "/face-book.jpg", url: "#facebook" },
+    { name: "Whatsapp", icon: "/whatsapp-icon.svg", url: "#Whatsapp" },
+    { name: "Twitter", icon: "/x.webp", url: "#twitter" },
+    { name: "Instagram", icon: "/instagram.jpeg", url: "#instagram" },
+    { name: "TikTok", icon: "/tiktok.jpg", url: "#tiktok" },
   ]
 
   return (
-    <footer className={`bg-[#1A1A1A] text-white py-12 ${className}`}>
+    <footer className={`bg-[#1A1A1A] text-white text-[Outfit] py-3 ${className}`}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
@@ -93,7 +94,7 @@ const Footer = ({ className = "" }: FooterProps) => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-100 pt-8">
           {/* Social Media and Bank Logo */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
@@ -113,7 +114,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             </div>
 
             <div className="flex items-center">
-              <img src="/bank-logo.svg" alt="Bank Logo" className="h-10 mr-3" />
+              <img src="/bank.png" alt="Bank Logo" className="h-10 mr-3" />
               <p className="text-gray-400 text-sm">
                 Licensed and Regulated by
                 <br />
@@ -127,7 +128,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             <p>
               Copyright © {currentYear}, All Rights Reserved By <span className="text-[#126100]">SafulPay</span>
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex space-x-6 mt-4 p-2 md:mt-0">
               <Link to="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>

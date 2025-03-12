@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { ArrowLeft } from "lucide-react"
-import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import ContactUs from "../components/ContactUs"
 
 // Define types for the subsections
 interface Subsection {
@@ -121,9 +121,9 @@ const sections: Section[] = [
 ]
 
 export default function PrivacyPolicy() {
+  
   return (
     <div className="min-h-screen bg-[#F8F9FA]">
-      <Navbar />
 
       {/* Header */}
       <div className="container mx-auto px-4 pt-20 pb-8">
@@ -169,26 +169,12 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* Newsletter */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="bg-white rounded-xl p-8 max-w-xl mx-auto shadow-sm">
-          <div className="flex justify-center mb-6">
-            <img src="/logo.svg" alt="SafulPay Logo" className="h-10" />
-          </div>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 border border-r-0 border-gray-200 rounded-l-lg focus:outline-none focus:border-[#126100]"
-            />
-            <button className="bg-[#126100] hover:bg-[#0d4800] text-white px-6 py-3 rounded-r-lg transition-colors">
-              Send
-            </button>
-          </div>
-        </div>
-      </div>
+       <div  className="bg-[#1A1A1A] mt-30">
 
+        <ContactUs />
       {/* Footer */}
       <Footer />
+       </div>
     </div>
   )
 }

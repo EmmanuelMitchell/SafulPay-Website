@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
@@ -14,7 +13,6 @@ export default function Home() {
   const navigate = useNavigate()
   const [isHovering, setIsHovering] = useState<boolean>(false)
   const [redirectTimer, setRedirectTimer] = useState<number | null>(null)
-  // const currentYear = new Date().getFullYear()
 
   useEffect(() => {
     return () => {
@@ -48,12 +46,12 @@ export default function Home() {
   return (
     <>
       {/* Mobile Navbar - Only visible on mobile */}
-      <div className="md:hidden ">
+      <div className="md:hidden">
         <Navbar scrollToSection={scrollToSection} isHomePage={true} />
       </div>
 
       {/* Hero Section with Fixed Height */}
-      <div className="h-screen flex flex-col bg-black overflow-hidden relative">
+      <div className="h-screen font-['Outfit'] flex flex-col bg-black overflow-hidden relative">
         {/* Desktop Navigation - Only visible on desktop */}
         <header className="container mx-auto px-4 pt-6 pb-4 flex justify-between items-center">
           <div className="flex items-center">
@@ -108,18 +106,19 @@ export default function Home() {
             </p>
           </section>
           <div className="mt-8 text-center">
-          <div className="flex justify-center space-x-4">
-            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-              <img src="google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
-              <span className="text-black">Google Play</span>
-            </button>
+           <div className="flex justify-center space-x-4">
+             <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+               <img src="google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
+               <span className="text-black">Google Play</span>
+             </button>
 
-            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-              <img src="apple.jpg" alt="App Store" className="w-6 h-6 mr-2" />
-              <span className="text-black">App Store</span>
-            </button>
-          </div>
-        </div>
+             <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+               <img src="apple.jpg" alt="App Store" className="w-6 h-6 mr-2" />
+               <span className="text-black">App Store</span>
+             </button>
+           </div>
+         </div>
+
 
           {/* Main Content with Banner and Phone */}
           <div className="relative flex-grow flex flex-col items-center justify-center">
@@ -162,23 +161,27 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Footer */}
+          
           <div className="bg-gray-100 rounded-t-3xl py-5 text-center mt-auto">
             {/* <p className="text-gray-600">&copy; {currentYear} SafulPay. All rights reserved.</p> */}
           </div>
         </motion.div>
       </div>
 
-      {/* Scrollable Sections - Only visible on mobile */}
+     
       <div className="">
         <Features />
         <HowItWorks />
         <Testimony />
         <FAQs />
-        <ContactUs />
-        <Footer/>
+        {/* ContactUs is now part of the dark footer section */}
+        <div className="bg-[#1A1A1A] mt-30 ">
+          <ContactUs />
+          <Footer />
+        </div>
       </div>
     </>
   )
 }
+
 

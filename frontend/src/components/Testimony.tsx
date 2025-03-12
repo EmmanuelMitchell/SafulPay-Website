@@ -1,93 +1,130 @@
+
+import type React from "react"
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    role: "Small Business Owner",
+    image: "/user.jpg",
+    quote:
+      "SafulPay has transformed how I manage my business finances. The real-time tracking and instant payments have saved me countless hours.",
+    position: { top: "10%", left: "20%" },
+  },
+  {
+    id: 2,
+    name: "Michael Chen",
+    role: "Freelancer",
+    image: "/Test.png",
+    quote:
+      "The app is incredibly intuitive and the customer support is outstanding. I can't imagine running my freelance business without it.",
+    position: { top: "30%", right: "15%" },
+  },
+  {
+    id: 3,
+    name: "Aminata Kamara",
+    role: "Market Vendor",
+    image: "/Testimo.png",
+    quote:
+      "SafulPay makes it so easy to handle payments. My customers love the convenience, and I love the security it provides.",
+    position: { bottom: "25%", left: "25%" },
+  },
+  {
+    id: 4,
+    name: "David Williams",
+    role: "Student",
+    image: "/Testi.png",
+    quote:
+      "The low fees and user-friendly interface make SafulPay perfect for students. Managing my finances has never been easier.",
+    position: { bottom: "20%", right: "20%" },
+  },
+]
+
 const Testimony = () => {
   return (
-    <section id="testimony" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-black mb-4">Don't just take our word for it.</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            See what our users have to say about their experience with SafulPay.
-          </p>
-        </div>
+    <div id="testimony" className="bg-white">
+      {/* Testimonials Section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Don't just take our word for it.</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Testimonial Cards */}
-          <div className="bg-gray-50 rounded-lg p-6 relative">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-[#126100] rounded-full flex items-center justify-center text-white font-semibold">
-                SA
-              </div>
-              <div className="ml-4">
-                <h3 className="font-semibold">Sarah Amara</h3>
-                <p className="text-sm text-gray-500">Business Owner</p>
+          {/* Testimonials Container */}
+          <div className="relative h-[600px]">
+            {/* Decorative Elements */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="w-[500px] h-[500px] border border-gray-200 rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="icon.png" alt="Decorative cactus" className="w-12 h-12 text-[#126100]" />
               </div>
             </div>
-            <div className="mb-4">
-              <div className="flex text-yellow-400 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-            </div>
-            <p className="text-gray-600">
-              "SafulPay has transformed how I manage my business finances. The real-time transaction tracking and
-              instant payments have saved me countless hours."
-            </p>
-          </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 relative">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-[#126100] rounded-full flex items-center justify-center text-white font-semibold">
-                JK
-              </div>
-              <div className="ml-4">
-                <h3 className="font-semibold">John Kamara</h3>
-                <p className="text-sm text-gray-500">Student</p>
-              </div>
-            </div>
-            <div className="mb-4">
-              <div className="flex text-yellow-400 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-            </div>
-            <p className="text-gray-600">
-              "The app is intuitive and perfect for students like me. Low transaction fees and excellent customer
-              support make it my go-to financial app."
-            </p>
-          </div>
+            {/* Testimonial Cards and Avatars */}
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="absolute" style={testimonial.position as React.CSSProperties}>
+                {/* Avatar */}
+                <div className="relative group">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#126100] cursor-pointer transform transition-transform duration-300 hover:scale-110">
+                    <img
+                      src={testimonial.image || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 relative">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-[#126100] rounded-full flex items-center justify-center text-white font-semibold">
-                AM
+                  {/* Testimonial Card - Shows on hover */}
+                  <div className="absolute z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-xl shadow-lg p-6 w-72 transform -translate-x-1/2 -translate-y-full -mt-4">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
+                        <img
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
+                        <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <blockquote className="text-gray-700 text-sm leading-relaxed">"{testimonial.quote}"</blockquote>
+                  </div>
+                </div>
               </div>
-              <div className="ml-4">
-                <h3 className="font-semibold">Aminata Mansaray</h3>
-                <p className="text-sm text-gray-500">Market Vendor</p>
-              </div>
-            </div>
-            <div className="mb-4">
-              <div className="flex text-yellow-400 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-            </div>
-            <p className="text-gray-600">
-              SafulPay has made my market business so much easier. No more cash handling worries, and my customers love
-              the convenience."
-            </p>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Download Section */}
+      <section className="bg-black py-16 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-3xl font-bold text-[#406B37] mb-4">Download SafulPay Today</h2>
+            <p className="text-gray-400 mb-8 max-w-md">
+              Secure, Fast and Easy Financial Management. Get started with SafulPay and experience seamless
+              transactions, real-time tracking, and top-notch security.
+            </p>
+            <div className="flex space-x-4">
+              <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+                <img src="/google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
+                <span className="text-black">Google Play</span>
+              </button>
+              <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+                <img src="/apple.jpg" alt="App Store" className="w-6 h-6 mr-2" />
+                <span className="text-black">App Store</span>
+              </button>
+            </div>
+          </div>
+
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src="/iPhone13.png"
+              alt="SafulPay App"
+              className="max-w-xs transform rotate-12 hover:rotate-0 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 

@@ -1,6 +1,10 @@
+
 const HowItWorks = () => {
+ 
   return (
-    <section id="how-it-works" className="py-20 bg-black">
+    <>
+   
+    <section id="how-it-works" className="py-20 bg-black" >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">How Does It Work?</h2>
@@ -64,15 +68,16 @@ const HowItWorks = () => {
             <button className="bg-white rounded-lg py-3 px-6 flex items-center">
               <img src="google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
               <span className="text-black">Google Play</span>
-            </button>
-            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
+              </button>
+              <button className="bg-white rounded-lg py-3 px-6 flex items-center">
               <img src="/app-store.png" alt="App Store" className="w-6 h-6 mr-2" />
               <span className="text-black">App Store</span>
-            </button>
-          </div>
-        </div> */}
+              </button>
+              </div>
+              </div> */}
       </div>
     </section>
+              </>
   )
 }
 
