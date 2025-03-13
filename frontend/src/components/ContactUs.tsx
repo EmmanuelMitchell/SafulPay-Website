@@ -5,8 +5,8 @@ const ContactUs = () => {
 
   return (
     <>
-    <div  className=" pb-8 px-4">
-      <div id="contact-us" className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-6 transform -translate-y-12">
+    <div  className=" p-6 px-4 font-['Outfit']">
+      <div id="contact-us" className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 transform -translate-y-12">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-2">
          

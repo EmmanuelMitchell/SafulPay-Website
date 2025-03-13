@@ -30,7 +30,7 @@ const Footer = ({ className = "" }: FooterProps) => {
 
   return (
     <footer className={`bg-[#1A1A1A] text-white text-[Outfit] py-3 ${className}`}>
-      <div className="container mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">

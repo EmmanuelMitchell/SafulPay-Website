@@ -56,25 +56,6 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
-
-        {/* Download Section */}
-        {/* <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-[#126100] mb-4">Download SafulPay Today</h3>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Secure, fast, and convenient financial management at your fingertips. Join thousands of users enjoying the
-            SafulPay experience.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-              <img src="google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
-              <span className="text-black">Google Play</span>
-              </button>
-              <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-              <img src="/app-store.png" alt="App Store" className="w-6 h-6 mr-2" />
-              <span className="text-black">App Store</span>
-              </button>
-              </div>
-              </div> */}
       </div>
     </section>
               </>
