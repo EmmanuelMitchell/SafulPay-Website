@@ -51,8 +51,8 @@ const FAQs = () => {
     <section id="faqs" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#406B37] font-['Outfit'] mb-4">FAQs: Get Answers to Common Questions</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-[#126100] font-['Outfit'] mb-4">FAQs: Get Answers to Common Questions</h2>
+          <p className="text-gray-600 font-['Outfit'] max-w-2xl mx-auto">
             Find answers to frequently asked questions about SafulPay's services and features.
           </p>
         </div>
@@ -64,19 +64,12 @@ const FAQs = () => {
                 className="w-full bg-white rounded-lg px-6 py-4 flex justify-between items-center focus:outline-none"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-semibold text-left">{faq.question}</span>
-                <svg
-                  className={`w-5 h-5 transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <span className="font-semibold text-gray-900 font-['Outfit'] text-left">{faq.question}</span>
+                <img src="/logo/faq-logo.png" alt="" className="h-10" />
               </button>
               {openIndex === index && (
                 <div className="bg-white px-6 py-4 rounded-b-lg mt-px">
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-gray-600 font-['Outfit']">{faq.answer}</p>
                 </div>
               )}
             </div>

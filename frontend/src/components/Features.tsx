@@ -23,30 +23,33 @@ const Features = () => {
         </section>
   
         {/* Explore Even More Powerful Features Section */}
-        <section className="bg-[#126100]  py-1 px-6 text-white relative overflow-hidden ">
-          <div className="p-12 relative z-10">
-            <h2 className="text-3xl font-bold mb-5 text-center">Explore Even More Powerful Features</h2>
-            <p className="text-center text-white/80 max-w-2xl mx-auto">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, suscipit!
+        <section className="max-w-[1400px] mx-auto rounded-t-[50px] bg-[#126100] py-1 px-6 rounded-b-[50px] text-white relative overflow-hidden ">
+          <div className="pt-8 relative z-10">
+            <h2 className="text-3xl font-bold font-['Outfit'] mb-5 text-center">Explore Even More Powerful Features</h2>
+            <p className="text-center font-['Outfit'] text-white/80 max-w-2xl mx-auto">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum quibusdam non soluta quaerat natus delectus voluptates
+               perferendis vero, error eos commodi repellendus neque voluptatum sit iusto atque, 
+               suscipit sequi amet sapiente laudantium, dolorum minima harum quod aliquam. Corrupti quis officia provident optio nesciunt. Odit iste cupiditate, dolores error debitis totam!
             </p>
           </div>
   
-          <div className="flex justify-center max-w-5xl mx-auto relative z-10">
+          <div className="flex justify-center max-w-5xl mx-auto  relative top-25  relative z-0">
             {/* Single feature image */}
             <img src="features.png" alt="Feature showcase" className="rounded-lg max-w-full shadow-xl" />
           </div>
         </section>
   
         {/* Additional image section */}
-        <div className="-rotate-18 mt-6">
+        <div className="-rotate-18 mt-10 pt-20">
           <img src="rope.png" alt="Rope illustration" className="w-full" />
         </div>
   
         {/* Your Security Is Our Priority Section */}
         <section className="py-8 px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-5 text-center">Your Security Is Our Priority</h2>
-            <p className="text-gray-600 mb-14 text-center max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold font-['Outfit'] mb-5 text-center">Your Security Is Our Priority</h2>
+            <p className="text-gray-600 mb-14 font-['Outfit'] text-center max-w-xl mx-auto">
               We employ the latest encryption technology and security practices to ensure your data remains protected at
               all times.
             </p>
@@ -56,30 +59,20 @@ const Features = () => {
               <div className="w-full md:w-1/4 space-y-10 order-2 md:order-1">
                 <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-green-100 p-3 rounded-lg shadow-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-[#126100]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
+                    
+                    <img src="/security-logo/fee.png" alt="" className="" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Data Encryption</h3>
-                    <p className="text-gray-600 text-sm">Your data is encrypted using industry-standard protocols.</p>
+                    <h3 className="font-semibold">No Hidden Fees</h3>
+                    <p className="text-gray-600 text-sm">YAt SafulPay, transparency is key. 
+                      We guarantee no hidden fees, so you always know exactly what you're paying for,
+                       with clear and upfront pricing for every transaction.</p>
                   </div>
                 </div>
   
                 <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-green-100 p-3 rounded-lg shadow-sm">
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6 text-[#126100]"
                       fill="none"
@@ -92,11 +85,13 @@ const Features = () => {
                         strokeWidth={2}
                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                       />
-                    </svg>
+                    </svg> */}
+                      <img src="/security-logo/binary-lock.png" alt="" className="" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Secure Authentication</h3>
-                    <p className="text-gray-600 text-sm">Multiple layers of authentication to protect your account.</p>
+                    <h3 className="font-semibold">Advanced Encryption</h3>
+                    <p className="text-gray-600 text-sm">Your personal and financial data is protected with industry-leading encryption technology.
+                       Every transaction is securely encrypted to keep your sensitive information safe from unauthorized access..</p>
                   </div>
                 </div>
               </div>
@@ -107,7 +102,7 @@ const Features = () => {
                   <img
                     src="phone.png"
                     alt="Smartphone"
-                    className="mx-auto rounded-3xl shadow "
+                    className="mx-auto h-[90vh] rounded-3xl shadow "
                   />
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-[#126100]/10 to-transparent opacity-50"></div>
                 </div>
@@ -117,50 +112,27 @@ const Features = () => {
               <div className="w-full md:w-1/4 space-y-10 order-3">
                 <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-green-100 p-3 rounded-lg shadow-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-[#126100]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                      />
-                    </svg>
+                      <img src="/security-logo/shield-check.png" alt="" className="" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Regular Audits</h3>
+                    <h3 className="font-semibold">Fraud Detection and Monitoring</h3>
                     <p className="text-gray-600 text-sm">
-                      We conduct regular security audits to identify and address potential vulnerabilities.
+                    We continuously monitor your transactions with cutting-edge fraud detection systems, 
+                    instantly flagging any suspicious activity to protect your funds from potential threats.
                     </p>
                   </div>
                 </div>
   
                 <div className="flex items-start gap-4 transform hover:translate-x-2 transition-transform duration-300">
                   <div className="bg-green-100 p-3 rounded-lg shadow-sm">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-[#126100]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                      />
-                    </svg>
+                   
+                      <img src="/security-logo/padlock-check.png" alt="" className="" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Automatic Updates</h3>
+                    <h3 className="font-semibold">Two-Factor Authentication</h3>
                     <p className="text-gray-600 text-sm">
-                      Our system is constantly updated to protect against the latest security threats.
+                    SafulPay adds an extra layer of protection with two-factor authentication,
+                     ensuring that only you can access your account, even if your password is compromised.
                     </p>
                   </div>
                 </div>

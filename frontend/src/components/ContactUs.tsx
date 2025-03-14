@@ -5,14 +5,14 @@ const ContactUs = () => {
 
   return (
     <>
-    <div  className=" p-6 px-4 font-['Outfit']">
-      <div id="contact-us" className="max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 transform -translate-y-12">
+    <div  className=" p-6 px-4 font-['Outfit'] relative top-25 z-0">
+      <div id="contact-us" className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-10 transform -translate-y-12">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-2">
          
-            <img src="icon.png" alt="" className="h-8" />
+            <img src="safulpay-logo.png" alt="" className="h-8" />
           
-          <span className="text-[#126100] text-xl font-semibold">SafulPay</span>
+          {/* <span className="text-[#126100] text-xl font-semibold">SafulPay</span> */}
         </div>
 
         {/* Form */}

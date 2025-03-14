@@ -45,7 +45,7 @@ const Testimony = () => {
       {/* Testimonials Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Don't just take our word for it.</h2>
+          <h2 className="text-4xl font-bold font-['Outfit'] text-center mb-16">Don't just take our word for it.</h2>
 
           {/* Testimonials Container */}
           <div className="relative h-[600px]">
@@ -95,22 +95,22 @@ const Testimony = () => {
       </section>
 
       {/* Download Section */}
-      <section className="bg-black py-16 px-4">
+      <section className="max-w-[1400px] mx-auto bg-black py-16 px-4 rounded-xl">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold text-[#406B37] mb-4">Download SafulPay Today</h2>
-            <p className="text-gray-400 mb-8 max-w-md">
+            <h2 className="text-3xl font-bold font-['Outfit'] text-[#126100] mb-4">Download SafulPay Today</h2>
+            <p className="text-gray-400 mb-8 max-w-md font-['Outfit']">
               Secure, Fast and Easy Financial Management. Get started with SafulPay and experience seamless
               transactions, real-time tracking, and top-notch security.
             </p>
             <div className="flex space-x-4">
               <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-                <img src="/google.jpg" alt="Google Play" className="w-6 h-6 mr-2" />
-                <span className="text-black">Google Play</span>
+                <img src="/logo/google-btn.png" alt="Google Play" className="h-10 mr-2" />
+               
               </button>
               <button className="bg-white rounded-lg py-3 px-6 flex items-center">
-                <img src="/apple.jpg" alt="App Store" className="w-6 h-6 mr-2" />
-                <span className="text-black">App Store</span>
+                <img src="/logo/apple-btn.png" alt="App Store" className="h-10 mr-2" />
+                {/* <span className="text-black">App Store</span> */}
               </button>
             </div>
           </div>

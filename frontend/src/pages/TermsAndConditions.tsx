@@ -312,13 +312,13 @@ export default function TermsAndConditions() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="bg-gradient-to-br from-[#1A1A1A] to-[#262626] rounded-2xl p-8">
+        <div className="bg-gradient-to-br from-[#121212] to-[#262626] rounded-4xl p-12 max-w-6xl mx-auto">
           <Link to="/" className="inline-flex items-center text-white mb-4 hover:text-gray-200 transition-colors">
             <ArrowLeft className="mr-2" size={20} />
-            <span>Back</span>
+            <span className="font-['outfit']">Back</span>
           </Link>
-          <h1 className="text-[#126100] text-3xl md:text-4xl font-bold">TERMS & CONDITIONS</h1>
-          <p className="text-gray-400 mt-2">Last Updated: November 2023</p>
+          <h1 className="text-[#126100] text-3xl md:text-4xl font-['outfit']">TERMS & CONDITIONS</h1>
+          <p className="text-gray-400 mt-2 font-['outfit']">Last Updated: November 2023</p>
         </div>
       </motion.div>
 
@@ -338,9 +338,9 @@ export default function TermsAndConditions() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
             >
-              <h2 className="text-[#126100] text-xl font-bold mb-4">{section.title}</h2>
+              <h2 className="text-[#126100] text-2xl font-['outfit'] mb-4">{section.title}</h2>
               {section.content.map((paragraph, pIndex) => (
-                <p key={pIndex} className="text-gray-700 text-[15px] leading-relaxed mb-4">
+                <p key={pIndex} className="text-gray-700 text-[15px] font-['outfit'] leading-relaxed mb-4">
                   {paragraph}
                 </p>
               ))}
@@ -411,7 +411,7 @@ export default function TermsAndConditions() {
       {/* Newsletter and Footer - Only show when not displaying other sections */}
       {!activeSection && (
         <motion.div
-          className="bg-[#1A1A1A]"
+          className=""
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
