@@ -14,7 +14,6 @@ export default function Home() {
   const [showSectionNav, setShowSectionNav] = useState<boolean>(false)
   const featuresRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
-  const currentYear = new Date().getFullYear()
 
   // Handle scroll to show/hide section navbar
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="overflow-hidden">
       {/* Mobile Navbar - Only visible on mobile */}
       <div className="md:hidden">
         <Navbar scrollToSection={scrollToSection} isHomePage={true} />
@@ -132,7 +131,7 @@ export default function Home() {
       )}
 
       {/* Hero Section with Fixed Height */}
-      <div ref={heroRef} className="h-screen w-full flex flex-col bg-black overflow-hidden relative">
+      <div ref={heroRef} className="h-screen w-full flex flex-col bg-black  relative">
         {/* Desktop Navigation - Only visible on desktop */}
         <header className="container mx-auto px-4 pt-6 pb-4 flex justify-between items-center">
           <div className="flex items-center">
@@ -255,10 +254,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="bg-gray-100 rounded-t-3xl py-5 text-center mt-auto">
-            <p className="text-gray-600">&copy; {currentYear} SafulPay. All rights reserved.</p>
-          </div>
+
         </motion.div>
       </div>
 
@@ -281,7 +277,7 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
